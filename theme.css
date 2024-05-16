@@ -1280,7 +1280,7 @@ body .kanban-plugin__item-form .kanban-plugin__item-input-wrapper {
 /* ─────────────────────────────────────────────────── */
 
 /* @settings
-name: Things Theme
+name: Mithem Theme
 id: things-style
 settings:
     -
@@ -1655,14 +1655,6 @@ settings:
         type: variable-color
         format: hex
         default: '#'
-    -
-        id: credits
-        title: Credits
-        type: heading
-        description: Created with ❤︎ by @colineckert. Support @colineckert at buymeacoffee.com/colineckert
-        level: 2
-        collapsed: true
-
 */
 
 /* ─────────────────────────────────────────────────── */
