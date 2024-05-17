@@ -26,10 +26,6 @@ body {
   --blue: #2e80f2;
   --pink: #ff82b2;
   --green: #3eb4bf;
-  --yellow: #e5b567;
-  --orange: #e87d3e;
-  --red: #e83e3e;
-  --purple: #9e86c8;
   --lightgray: #bababa;
 
   --h1-color: var(--lightgray);
