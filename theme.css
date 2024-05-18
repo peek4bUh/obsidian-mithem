@@ -7,30 +7,28 @@
   Readme:
   https://github.com/angel99ab/obsidian-mithem
 
-/* ---------------------------------------------------------------------------
-
-/* ─────────────────────────────────────────────────── */
-/* Base Theme Styling                                  */
-/* ─────────────────────────────────────────────────── */
+--------------------------------------------------------------------------- */
 
 @charset "UTF-8";
 body {
   /* Colors */
+  --yellow: #ecb940;
+  --turquoise: #5dc1b9;
+
   --blue: #2e80f2;
   --pink: #ff82b2;
-  --green: #3eb4bf;
-  --lightgray: #bababa;
+  --lightgray: #cfc9c9;
 
-  --h1-color: var(--lightgray);
-  --h2-color: var(--lightgray);
-  --h3-color: var(--lightgray);
-  --h4-color: var(--lightgray);
-  --h5-color: var(--lightgray);
-  --h6-color: var(--lightgray);
+  --h1-color: var(--yellow);
+  --h2-color: var(--yellow);
+  --h3-color: var(--yellow);
+  --h4-color: var(--yellow);
+  --h5-color: var(--yellow);
+  --h6-color: var(--yellow);
 
-  --strong-color: var(--pink);
-  --em-color: var(--pink);
-  --quote-color: var(--green);
+  --strong-color: var(--turquoise);
+  --em-color: var(--turquoise);
+  --quote-color: var(--pink);
 
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
@@ -121,7 +119,7 @@ body.theme-dark.is-mobile {
   --color-purple: #a882ff;
   --color-pink: #fa99cd;
   --color-base-00: #222222; /* main editor window */
-  --color-base-10: #282c34; /* code blocks */
+  --color-base-10: #303030; /* code blocks */
   --color-base-20: #1b1b1b; /* top unselected unfocused nav */
   --color-base-25: #2c313c;
   --color-base-30: #35393e;
@@ -176,6 +174,10 @@ body.theme-dark.is-mobile {
 
   --titlebar-background: #303030;
   --titlebar-background-focused: #303030;
+}
+
+.cm-underline {
+  text-decoration: none !important;
 }
 
 body.is-mobile.theme-dark.mobile-black-background {
