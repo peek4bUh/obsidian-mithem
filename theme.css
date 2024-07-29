@@ -1,123 +1,95 @@
 /* ---------------------------------------------------------------------------
 
-  MITHEM
-  Version 0.0.0
-  Created by @angel99ab
+Mithem by @angel99ab
 
-  Readme:
-  https://github.com/angel99ab/obsidian-mithem
+User interface replacement for Obsidian.
 
---------------------------------------------------------------------------- */
+Readme:
+https://github.com/angel99ab/obsidian-mithem
+
+----------------------------------------------------------------------------*/
 
 @charset "UTF-8";
+
 body {
-  /* Colors */
-  --yellow: #ecb940;
-  --turquoise: #5dc1b9;
+  /* Custom Variables */
 
-  --blue: #2e80f2;
-  --pink: #ff82b2;
-  --lightgray: #cfc9c9;
+  --font-editor-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
 
-  --h1-color: var(--yellow);
-  --h2-color: var(--yellow);
-  --h3-color: var(--yellow);
-  --h4-color: var(--yellow);
-  --h5-color: var(--yellow);
-  --h6-color: var(--yellow);
+  --strong-color: var(--color-turquoise);
+  --em-color: var(--color-turquoise);
+  --quote-color: var(--color-pink);
 
-  --strong-color: var(--turquoise);
-  --em-color: var(--turquoise);
-  --quote-color: var(--pink);
+  /* Obsidian Variables */
+  --blockquote-color: var(--text-muted);
+  --blockquote-border-color: var(--text-muted);
 
-  --tag-background-color-l: #bde1d3;
-  --tag-font-color-l: #1d694b;
-  --tag-background-color-d: #1d694b;
-  --tag-font-color-d: #ffffff;
+  --font-ui-smaller: 11px;
 
-  --highlight-background-color--normal: rgba(255, 213, 0, 0.15) !important;
-  --highlight-background-color-underline: #ffd500 !important;
-  --highlight-background-color--active: rgba(255, 213, 0, 0.2) !important;
+  --normal-weight: 400;
 
-  --progress-color-1: #ad5758;
-  --progress-color-2: #b87f4c;
-  --progress-color-3: #d2b874;
-  --progress-color-4: #b0c07e;
-  --progress-color-5: #768399;
+  --inline-title-margin-bottom: 1rem;
 
-  /* Font families */
-  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular,
-    Consolas, 'Roboto Mono', monospace;
-  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-editor: var(--font-editor-override), var(--font-text-override),
-    var(--font-editor-theme);
+  --h1-size: 1.75em;
+  --h2-size: 1.35em;
+  --h3-size: 1.20em;
+  --h4-size: 1.1em;
+  --h5-size: 1em;
+  --h6-size: 0.85em;
 
-  --h1-size: 1.85rem;
-  --h2-size: 1.5rem;
-  --h3-size: 1.2rem;
-  --h4-size: 1.1rem;
-  --h5-size: 1rem;
-  --h6-size: 0.9rem;
+  --h1-weight: 700;
+  --h2-weight: 600;
+  --h3-weight: 500;
+  --h4-weight: 500;
+  --h5-weight: 500;
+  --h6-weight: 400;
 
-  /* Misc */
-  --checkbox-radius: 30%;
-  --link-external-decoration: underline;
-  --link-decoration: underline;
+  --nested-padding: 1.25em;
 
-  /* -------- */
-  --radius-s: 4px;
-  --radius-m: 8px;
-  --radius-l: 10px;
-  --radius-xl: 16px;
+  --mobile-left-sidebar-width: 280pt;
+  --mobile-right-sidebar-width: 240pt;
+  --top-left-padding-y: 0px;
 
-  --line-width: 40rem;
-  --line-height: 1.5;
-  --max-width: 90%;
-  --max-col-width: 18em;
-  --icon-muted: 0.5;
-  --nested-padding: 1.1em;
-  --folding-offset: 10px;
+  --heading-spacing: 1.75em;
+  --p-spacing: 1.4rem;
 
-  --line-width-adaptive: var(--line-width);
-  --line-width-wide: calc(var(--line-width) + 12.5%);
+  --table-border-width: 1px;
+  --table-header-border-width: 0;
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
+  --table-row-last-border-width: 0;
+  --table-edge-cell-padding-first: 0;
+  --table-edge-cell-padding-last: 0;
+  --table-cell-padding: 4px 10px;
+  --table-header-size: var(--table-text-size);
 
-  --h1-border-line-width: 100%;
-  --h2-border-line-width: 85%;
-  --h3-border-line-width: 65%;
-  --h4-border-line-width: 44%;
-  --h5-border-line-width: 25%;
-  --h6-border-line-width: 0;
-
-  --border-line-height: 2px;
-
-  --header-underline-align: 4px;
+  --link-decoration: none;
+  --link-decoration-hover: none;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: none;
 }
 
-/* ─────────────────────────────────────────────────── */
-/* Color Schemes                                       */
-/* ─────────────────────────────────────────────────── */
 
 .theme-dark,
 body.theme-dark.is-mobile {
   color-scheme: dark;
-  --highlight-mix-blend-mode: lighten;
-  --mono-rgb-0: 0, 0, 0;
-  --mono-rgb-100: 255, 255, 255;
-  --color-red-rgb: 251, 70, 76;
-  --color-red: #fb464c;
-  --color-green-rgb: 68, 207, 110;
-  --color-green: #44cf6e;
-  --color-orange: #e9973f;
-  --color-yellow: #e0de71;
-  --color-cyan: #53dfdd;
-  --color-blue: #027aff;
-  --color-purple: #a882ff;
-  --color-pink: #fa99cd;
+
+  --color-light-white: #cad2e2;
+  --color-dark-white: #bec7db; /* bbbfd8 & c1cadd*/
+  --color-yellow: #ecb940; /* BEC6A0 & b2c6a0 */
+  --color-turquoise: #5dc1b9;
+  --color-blue: #2e80f2;
+  --color-pink: #ff82b2;
+  --color-lightgray: #cfc9c9;
+
+  --color-red: #d04255;
+  --color-orange: #d5763f;
+  --color-green: #a8c373;
+  --color-cyan: #73bbb2;
+  --color-blue: #6c99bb;
+  --color-purple: #9e86c8;
+
   --color-base-00: #222222; /* main editor window */
   --color-base-10: #303030; /* code blocks */
   --color-base-20: #1b1b1b; /* top unselected unfocused nav */
@@ -129,55 +101,38 @@ body.theme-dark.is-mobile {
   --color-base-60: #999;
   --color-base-70: #bababa;
   --color-base-100: #dadada;
-  --color-accent: #4c8ce6;
-  --color-accent-1: #3c81e3;
-  --color-accent-2: #5d97e8;
-  --titlebar-background-focused: var(--color-base-10);
-  --background-modifier-form-field: var(--color-base-25);
-  --background-secondary-alt: var(--color-base-30);
-  --interactive-normal: var(--color-base-30);
-  --interactive-hover: var(--color-base-35);
-  --text-highlight-bg-d: rgba(255, 208, 0, 0.4);
-  --text-highlight-bg: var(--text-highlight-bg-d);
-  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-  --text-selection: #9A82D4;
-  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),
-    0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
-  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),
-    0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2),
-    0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
-  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121),
-    0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
-  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
-    0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
-
-  --tag-background: var(--tag-background-color-d);
-  --tag-color: var(--tag-font-color-d);
 
   --text-muted: #bec6cf;
-  --text-faint: #5d6d7e;
+  --text-faint: #8e949b;
   --text-formatted: #92a0af;
 
   --text-accent: #79a9ec;
   --text-accent-hover: #afcbf4;
 
-  --atom-gray-1: #5c6370;
-  --atom-gray-2: #abb2bf;
-  --atom-red: #e06c75;
-  --atom-orange: #d19a66;
-  --atom-green: #98c379;
-  --atom-aqua: #56b6c2;
-  --atom-purple: #c678dd;
-  --atom-blue: #61afef;
-  --atom-yellow: #e5c07b;
+  --h1-color: var(--color-light-white);
+  --h2-color: var(--color-light-white);
+  --h3-color: var(--color-light-white);
+  --h4-color: var(--color-light-white);
+  --h5-color: var(--color-light-white);
+  --h6-color: var(--color-light-white);
+
+  --nav-item-color: #bec6cf;
+
+  --tag-color: #eeeded;
+  --tag-background: #1d694b;
 
   --titlebar-background: #303030;
   --titlebar-background-focused: #303030;
+
+  --text-normal: var(--color-dark-white);
 }
 
-.cm-underline {
-  text-decoration: none !important;
+table thead tr:nth-child(odd) th {
+  font-weight: 700;
+}
+
+table tbody tr:nth-child(odd) td {
+  background-color: #2d2d2d;
 }
 
 body.is-mobile.theme-dark.mobile-black-background {
@@ -191,61 +146,6 @@ body.is-mobile.theme-dark.mobile-black-background {
     --color-base-30: #ebedf0;
     --h1-color: var(--color-base-00);
   }
-}
-
-/* H1 styling */
-h1::after,
-.is-live-preview .HyperMD-header-1::after {
-    content: "";
-    display: block;
-    background: var(--h1-color);
-    width: var(--h1-border-line-width);
-    height: var(--border-line-height);
-    margin-top: var(--header-underline-align);
-}
-
-/* H2 styling */
-h2::after,
-.is-live-preview .HyperMD-header-2::after {
-    content: "";
-    display: block;
-    background: var(--h2-color);
-    width: var(--h2-border-line-width);
-    height: var(--border-line-height);
-    margin-top: var(--header-underline-align);
-}
-
-/* H3 styling */
-h3::after,
-.is-live-preview .HyperMD-header-3::after {
-    content: "";
-    display: block;
-    background: var(--h3-color);
-    width: var(--h3-border-line-width);
-    height: var(--border-line-height);
-    margin-top: var(--header-underline-align);
-}
-
-/* H4 styling */
-h4::after,
-.is-live-preview .HyperMD-header-4::after {
-    content: "";
-    display: block;
-    background: var(--h4-color);
-    width: var(--h4-border-line-width);
-    height: var(--border-line-height);
-    margin-top: var(--header-underline-align);
-}
-
-/* H5 styling */
-h5::after,
-.is-live-preview .HyperMD-header-5::after {
-    content: "";
-    display: block;
-    background: var(--h5-color);
-    width: var(--h5-border-line-width);
-    height: var(--border-line-height);
-    margin-top: var(--header-underline-align);
 }
 
 /* Hashtags font */
@@ -271,12 +171,6 @@ body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
 body:not(.default-font-color) em,
 body:not(.default-font-color) span:not(.cm-highlight).cm-em {
   color: var(--em-color);
-}
-
-/* Styled highlights */
-body:not(.default-font-color) mark strong,
-body:not(.default-font-color) mark em {
-  color: var(--text-normal);
 }
 
 /* Fancy highlight */
@@ -447,154 +341,6 @@ body.fancy-code .markdown-reading-view .markdown-preview-view pre code {
 
 body.fancy-code .markdown-preview-view pre code {
   padding: var(--size-4-1) var(--size-4-5);
-}
-
-/* ------------------- */
-/* One Dark Syntax Coloring */
-/* Source: https://github.com/AGMStudio/prism-theme-one-dark */
-/* ------------------- */
-.theme-light .token.comment .theme-light .cm-comment {
-  color: #ababab;
-}
-.theme-dark .token.comment,
-.theme-dark .cm-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--atom-gray-1);
-}
-.token.punctuation,
-.token.plain-text,
-.token.dom.variable,
-.cm-hmd-codeblock.cm-bracket {
-  color: var(--atom-gray-2);
-}
-code[class*='language-'],
-.token.selector,
-.cm-tag,
-.token.dom.variable,
-.token.tag,
-.cm-def,
-.token.parameter,
-.cm-property,
-.cm-qualifier {
-  color: var(--atom-red);
-}
-.token.class-name,
-.token.maybe-class-name,
-.token.property-access,
-.token.constant,
-.token.builtin,
-.cm-variable-2,
-.cm-type,
-.cm-atom,
-code .cm-tag {
-  color: var(--atom-yellow);
-}
-.token.property,
-.token.boolean,
-.token.number,
-.token.symbol,
-.token.attr-name,
-.token.deleted,
-.cm-attribute,
-.cm-number,
-.cm-property.cm-string {
-  color: var(--atom-orange);
-}
-.token.string,
-.token.char,
-.token.attr-value,
-.token.inserted,
-.cm-hmd-codeblock.cm-string,
-.cm-hmd-codeblock.cm-string-2 {
-  color: var(--atom-green);
-}
-.token.operator,
-.cm-operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: var(--atom-aqua);
-}
-.token.atrule,
-.token.keyword,
-.cm-keyword {
-  color: var(--atom-purple);
-}
-.cm-variable,
-.token.function,
-.token.method,
-.token.macro.property {
-  color: var(--atom-blue);
-}
-.token.regex,
-.token.important,
-.token.variable {
-  color: var(--atom-purple);
-}
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
-}
-.token.entity {
-  cursor: help;
-}
-
-/* --------------------- */
-/* Mobile toolbar button */
-/* --------------------- */
-
-body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(2),
-body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(2) {
-  color: white;
-  background-color: var(--blue);
-  opacity: 1;
-  top: calc(90vh - 110px);
-  display: flex;
-  padding: 5px;
-  position: fixed;
-  left: 86vw;
-  transform: translate(-40%, 5%);
-  justify-content: center;
-  align-items: center;
-  width: 53px;
-  height: 53px;
-  border-radius: 50% !important;
-  box-shadow: 1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
-    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028), 5px 1.3px 10px rgba(0, 0, 0, 0.035),
-    8.9px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05), 40px 10px 80px rgba(0, 0, 0, 0.07);
-}
-
-body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(2),
-body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(2) {
-  color: white;
-  background-color: var(--blue);
-  opacity: 1;
-  position: fixed;
-  top: calc(100vh - 138px);
-  display: flex;
-  padding: 5px;
-  left: 86vw;
-  transform: translate(-40%, -115%);
-  justify-content: center;
-  align-items: center;
-  width: 53px;
-  height: 53px;
-  border-radius: 50% !important;
-  box-shadow: 1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
-    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028), 5px 1.3px 10px rgba(0, 0, 0, 0.035),
-    8.9px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05), 40px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
 /* ------------------- */
@@ -941,643 +687,3 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
     }
   }
 }
-
-/* ─────────────────────────────────────────────────── */
-/* Plugins */
-/* ─────────────────────────────────────────────────── */
-
-/* --------------- */
-/* Todoist */
-/* --------------- */
-
-.todoist-p1 > input[type='checkbox'] {
-  border: 1px solid #ff757f !important;
-  background-color: rgba(255, 117, 127, 0.25) !important;
-}
-.todoist-p1 > input[type='checkbox']:hover {
-  background-color: rgba(255, 117, 127, 0.5) !important;
-}
-.todoist-p2 > input[type='checkbox'] {
-  border: 1px solid #ffc777 !important;
-  background-color: rgba(255, 199, 119, 0.25) !important;
-}
-.todoist-p2 > input[type='checkbox']:hover {
-  background-color: rgba(255, 199, 119, 0.5) !important;
-}
-.todoist-p3 > input[type='checkbox'] {
-  border: 1px solid #65bcff !important;
-  background-color: rgba(101, 188, 255, 0.25) !important;
-}
-.todoist-p3 > input[type='checkbox']:hover {
-  background-color: rgba(101, 188, 255, 0.5) !important;
-}
-.todoist-p4 > input[type='checkbox'] {
-  border: 1px solid #b4c2f0 !important;
-  background-color: rgba(180, 194, 240, 0.25) !important;
-}
-.todoist-p4 > input[type='checkbox']:hover {
-  background-color: rgba(180, 194, 240, 0.5) !important;
-}
-.task-metadata {
-  font-size: var(--font-todoist-metadata-size);
-  color: #7a88cf;
-  margin-left: unset;
-}
-.task-metadata > * {
-  margin-right: 30px;
-}
-.task-date.task-overdue {
-  color: rgba(255, 152, 164, 0.75) !important;
-}
-.task-calendar-icon,
-.task-project-icon,
-.task-labels-icon {
-  vertical-align: middle;
-  height: 17px;
-  width: 17px;
-}
-.todoist-project .todoist-project {
-  margin-left: 20px;
-}
-.todoist-section {
-  margin-left: 20px;
-}
-.todoist-project .todoist-project-title {
-  font-weight: 700;
-  margin-block-end: 0px;
-}
-.todoist-section .todoist-section-title {
-  font-size: var(--font-todoist-title-size);
-  color: #7a88cf;
-  font-weight: 700;
-  margin-block-end: 0px;
-}
-.todoist-error {
-  border: 1px solid #ff98a4;
-  background-color: rgba(255, 152, 164, 0.05);
-  padding: 1em 1em;
-  margin: 1em 0px;
-}
-.todoist-error p {
-  margin: 0 0 1em 0;
-  font-weight: 600;
-}
-.todoist-error code {
-  background-color: unset !important;
-  padding: unset !important;
-  margin: unset !important;
-}
-.todoist-success {
-  border: 1px solid #c3e88d !important;
-  background-color: rgba(195, 232, 141, 0.05);
-  padding: 1em 1em !important;
-  margin: 1em 0px;
-}
-.todoist-success p {
-  margin: 0;
-  font-weight: 600;
-}
-/* .priority-container .priority-1 {
-  color: #ff98a4;
-}
-.priority-container .priority-2 {
-  color: #ffc777;
-}
-.priority-container .priority-3 {
-  color: #65bcff;
-}
-.priority-container .priority-4 {
-  color: #b4c2f0;
-} */
-
-/* ---------------  */
-/* Checklist */
-/* --------------- */
-
-.checklist-plugin-main .title {
-  font-size: var(--nav-item-size);
-}
-
-.checklist-plugin-main .container input.search {
-  font-size: var(--font-ui-small);
-}
-
-.checklist-plugin-main .group-header button.collapse,
-.checklist-plugin-main button.toggle {
-  box-shadow: none;
-  cursor: pointer;
-}
-
-.checklist-plugin-main .classic .content > p {
-  font-size: var(--font-ui-smaller);
-}
-
-.checklist-plugin-main .toggle .checkbox {
-  border-radius: var(--checkbox-radius) !important;
-}
-
-/* ---------------  */
-/* Kanban */
-/* --------------- */
-
-body:not(.no-kanban-styles) .kanban-plugin {
-  --dot-color: rgba(102, 102, 102, 0.1);
-  --dot-spacing: 9px;
-  --dot-size: 1px;
-}
-body:not(.no-kanban-styles) .kanban-plugin__board {
-  background-image: radial-gradient(
-    circle,
-    var(--dot-color) var(--dot-size),
-    transparent var(--dot-size)
-  );
-  border-top: var(--thin-border);
-  background-size: var(--dot-spacing) var(--dot-spacing);
-  background-attachment: local;
-}
-
-body:not(.no-kanban-styles) .kanban-plugin__board > div {
-  margin: 0 auto;
-}
-body:not(.no-kanban-styles) .kanban-plugin__item-form {
-  border-top: none;
-}
-body:not(.no-kanban-styles) .kanban-plugin__lane-header-wrapper {
-  border-bottom: 0;
-}
-body:not(.no-kanban-styles) .kanban-plugin button {
-  box-shadow: none;
-}
-body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper > button:hover {
-  color: var(--text-normal);
-  background: var(--background-modifier-hover);
-}
-body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper {
-  border-top: none;
-}
-body:not(.no-kanban-styles) .kanban-plugin__lane {
-  border: 1px solid transparent;
-}
-body:not(.no-kanban-styles) .kanban-plugin__item-content-wrapper {
-  box-shadow: none;
-}
-
-body:not(.no-kanban-styles):not(.is-mobile)
-  .kanban-plugin__grow-wrap
-  > textarea:focus {
-  box-shadow: none;
-}
-body:not(.no-kanban-styles) .kanban-plugin__item-input-actions button,
-body:not(.no-kanban-styles) .kanban-plugin__lane-input-actions button {
-  font-size: var(--font-adaptive-small);
-}
-body:not(.no-kanban-styles)
-  .kanban-plugin__lane-header-wrapper
-  .kanban-plugin__grow-wrap
-  > textarea,
-body:not(.no-kanban-styles)
-  .kanban-plugin__lane-input-wrapper
-  .kanban-plugin__grow-wrap
-  > textarea {
-  background: transparent;
-}
-body .kanban-plugin__item-button-wrapper > button {
-  color: var(--text-muted);
-  font-weight: 400;
-  background: 0 0;
-  min-height: calc(var(--input-height) + 8px);
-}
-body .kanban-plugin__item-form .kanban-plugin__item-input-wrapper {
-  min-height: calc(var(--input-height) + 8px);
-  display: flex;
-  justify-content: center;
-}
-.kanban-plugin__item-input-wrapper textarea {
-  background-color: var(--background-primary);
-}
-.kanban-plugin__lane-items {
-  padding-bottom: 0;
-}
-
-/* ─────────────────────────────────────────────────── */
-/* Styles Settings */
-/* ─────────────────────────────────────────────────── */
-
-/* @settings
-name: Mithem Theme
-id: things-style
-settings:
-    -
-        id: features
-        title: Features
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        title: Black mobile background
-        description: Change mobile editor background to default theme black
-        id: mobile-black-background
-        type: class-toggle
-        default: false
-    -
-        title: Disable mobile floating-action button
-        description: Revert placement of edit/preview button to default in header (mobile)
-        id: floating-button-off
-        type: class-toggle
-        default: false
-    -
-        title: Highlight active line
-        description: Change background color of current working line
-        id: active-line
-        type: class-toggle
-        default: false
-    -
-        title: Fancy code blocks
-        description: Enable fancy numbered code blocks
-        id: fancy-code
-        type: class-toggle
-        default: false
-    -
-        title: Fancy highlighting
-        description: Enable fancy highlight styles with highlight underlines
-        id: fancy-highlight
-        type: class-toggle
-        default: false
-    -
-        title: Disable Kanban board styles
-        description: Remove minimalist styling to the Kanban plugin
-        id: no-kanban-styles
-        type: class-toggle
-        default: false
-    -
-        id: link-decoration
-        title: Underline internal links
-        description: Show underlines on internal links
-        type: variable-select
-        default: Underline
-        options:
-          - Underline
-          - None
-    -
-        id: link-external-decoration
-        title: Underline external links
-        description: Show underlines on external links
-        type: variable-select
-        default: Underline
-        options:
-          - Underline
-          - None
-	-
-        id: custom-fonts
-        title: Typography
-        type: heading
-        level: 2
-        collapsed: true
-    - 
-        id: default-font-color
-        title: Default font colors
-        description: Use the default font color styling for bold, italics, and quotes
-        type: class-toggle
-        default:  false
-    - 
-        id: text-highlight-bg-l
-        title: Highlight color (light)
-        type: variable-color
-        format: rgb
-        default: 'rgba(255, 208, 0, 0.4)'
-    - 
-        id: text-highlight-bg-d
-        title: Highlight color (dark)
-        type: variable-color
-        format: rgb
-        default: 'rgba(255, 208, 0, 0.4)'
-    - 
-        id: strong-color
-        title: Bold font color
-        type: variable-color
-        format: hex
-        default: '#FF82B2' 
-    - 
-        id: em-color
-        title: Italics font color
-        type: variable-color
-        format: hex
-        default: '#FF82B2' 
-    - 
-        id: quote-color
-        title: Blockquotes font color
-        type: variable-color
-        format: hex
-        default: '#3EB4BF' 
-    -
-        id: code-normal
-        title: Inline code blocks font color (Light mode)
-        type: variable-color
-        format: hex
-        default: '#BEC6CF'
-    -
-        id: code-color-d
-        title: Inline code blocks font color (Dark mode)
-        type: variable-color
-        format: hex
-        default: '#555E68'
-    - 
-        id: tag-background-color-l
-        title: Tag background color (Light mode)
-        type: variable-color
-        format: hex
-        default: '#BDE1D3' 
-    - 
-        id: tag-font-color-l
-        title: Tag font color (Light mode)
-        type: variable-color
-        format: hex
-        default: '#1D694B' 
-    - 
-        id: tag-background-color-d
-        title: Tag background color (Dark mode)
-        type: variable-color
-        format: hex
-        default: '#1D694B' 
-    - 
-        id: tag-font-color-d
-        title: Tag font color (Dark mode)
-        type: variable-color
-        format: hex
-        default: '#FFFFFF' 
-    - 
-        id: progress-color
-        title: Progress colorful mode switcher
-        description: Toggle progress color scheme
-        type: class-toggle
-        default: false
-    - 
-        id: progress-color-1
-        title: progress 2-39% color
-        type: variable-color
-        opacity: true
-        format: hex
-        default: '#ad5758'
-    - 
-        id: progress-color-2
-        title: progress 40-59% color
-        type: variable-color
-        opacity: true
-        format: hex
-        default: '#b87f4c'
-    - 
-        id: progress-color-3
-        title: progress 60-79% color
-        type: variable-color
-        opacity: true
-        format: hex
-        default: '#d2b874'
-    - 
-        id: progress-color-4
-        title: progress 80-99% color
-        type: variable-color
-        opacity: true
-        format: hex
-        default: '#b0c07e'
-    - 
-        id: progress-color-5
-        title: progress 1,100% color
-        type: variable-color
-        opacity: true
-        format: hex
-        default: '#768399'
-    - 
-        id: headings
-        title: Headings
-        type: heading
-        level: 2
-        collapsed: true
-    - 
-        id: level-1-headings
-        title: Level 1 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h1-size
-        title: H1 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 1.85em
-    - 
-        id: h1-weight
-        title: H1 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 700
-    -
-        id: h1-color
-        title: H1 color
-        type: variable-color
-        format: hex
-        default: '#'
-	- 
-        id: h1-underline
-        title: H1 underline
-        description: Toggle H1 underline (border-bottom)
-        type: class-toggle
-        default: true
-    - 
-        id: level-2-headings
-        title: Level 2 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h2-size
-        title: H2 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 1.5em
-    - 
-        id: h2-weight
-        title: H2 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 700
-    - 
-        id: h2-color
-        title: H2 color
-        type: variable-color
-        format: hex
-        default: '#2E80F2'
-    - 
-        id: h2-underline
-        title: H2 underline
-        description: Toggle H2 underline (border-bottom)
-        type: class-toggle
-        default: true
-    -
-        id: level-3-headings
-        title: Level 3 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h3-size
-        title: H3 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 1.2em
-    - 
-        id: h3-weight
-        title: H3 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 600
-    -
-        id: h3-color
-        title: H3 color
-        type: variable-color
-        format: hex
-        default: '#2E80F2'
-	- 
-        id: h3-underline
-        title: H3 underline
-        description: Toggle H3 underline (border-bottom)
-        type: class-toggle
-        default: true
-    - 
-        id: level-4-headings
-        title: Level 4 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h4-size
-        title: H4 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 1.1em
-    - 
-        id: h4-weight
-        title: H4 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 500
-    - 
-        id: h4-color
-        title: H4 color
-        type: variable-color
-        format: hex
-        default: '#E5B567'
-    -
-        id: h4-transform
-        title: H4 transform
-        description: Transform the H4 heading text
-        type: variable-select
-        default: uppercase
-        options:
-            -
-                label: Uppercase
-                value: uppercase
-            -
-                label: None
-                value: none
-	- 
-        id: h4-underline
-        title: H4 underline
-        description: Toggle H4 underline (border-bottom)
-        type: class-toggle
-        default: true
-    - 
-        id: level-5-headings
-        title: Level 5 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h5-size
-        title: H5 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 1em
-    - 
-        id: h5-weight
-        title: H5 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 500
-    - 
-        id: h5-color
-        title: H5 color
-        type: variable-color
-        format: hex
-        default: '#E83E3E'
-	- 
-        id: h5-underline
-        title: H5 underline
-        description: Toggle H5 underline (border-bottom)
-        type: class-toggle
-        default: true
-    - 
-        id: level-6-headings
-        title: Level 6 Headings
-        type: heading
-        level: 3
-        collapsed: true
-    - 
-        id: h6-size
-        title: H6 font size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: 0.9em
-    - 
-        id: h6-weight
-        title: H6 font weight
-        description: Accepts numbers representing the CSS font-weight
-        type: variable-number
-        default: 400
-    -
-        id: h6-color
-        title: H6 color
-        type: variable-color
-        format: hex
-        default: '#'
-*/
-
-/* ─────────────────────────────────────────────────── */
-/* Plugin Compatibility info for the Obsidian Hub */
-/* ─────────────────────────────────────────────────── */
-
-/* @plugins
-core:
-- backlink
-- command-palette
-- file-explorer
-- global-search
-- graph
-- outgoing-link
-- outline
-- page-preview
-- starred
-- switcher
-- tag-pane
-- file-recovery
-- daily-notes
-- random-note
-- publish
-- sync
-- word-count
-community:
-- sliding-panes-obsidian
-- obsidian-codemirror-options
-- obsidian-kanban
-- dataview
-- obsidian-hider
-- calendar
-- mysnippets-plugin
-- cmenu-plugin
-- obsidian-outliner
-- readwise-official
-- tag-wrangler
-- todoist-sync-plugin
-- templater-obsidian
-- obsidian-system-dark-mode
-- obsidian-style-settings
-*/
