@@ -346,50 +346,6 @@ body.fancy-code .markdown-preview-view pre code {
   padding: var(--size-4-1) var(--size-4-5);
 }
 
-/* ------------------- */
-/* Progress bars styling. Credit Minimal theme: https://minimal.guide/progress-bars */
-/* Support @kepano - https://www.buymeacoffee.com/kepano */
-/* ------------------- */
-.progress-color {
-  .markdown-rendered progress,
-  .markdown-source-view.is-live-preview progress,
-  .markdown-preview-view progress {
-    &[value^='1']::-webkit-progress-value,
-    &[value^='2']::-webkit-progress-value,
-    &[value^='3']::-webkit-progress-value {
-      background-color: var(--progress-color-1);
-    }
-    &[value^='4']::-webkit-progress-value,
-    &[value^='5']::-webkit-progress-value {
-      background-color: var(--progress-color-2);
-    }
-    &[value^='6']::-webkit-progress-value,
-    &[value^='7']::-webkit-progress-value {
-      background-color: var(--progress-color-3);
-    }
-    &[value^='8']::-webkit-progress-value,
-    &[value^='9']::-webkit-progress-value {
-      background-color: var(--progress-color-4);
-    }
-    &[value='1']::-webkit-progress-value,
-    &[value='100']::-webkit-progress-value {
-      background-color: var(--progress-color-5);
-    }
-
-    &[value='0']::-webkit-progress-value,
-    &[value='2']::-webkit-progress-value,
-    &[value='3']::-webkit-progress-value,
-    &[value='4']::-webkit-progress-value,
-    &[value='5']::-webkit-progress-value,
-    &[value='6']::-webkit-progress-value,
-    &[value='7']::-webkit-progress-value,
-    &[value='8']::-webkit-progress-value,
-    &[value='9']::-webkit-progress-value {
-      background-color: var(--progress-color-1);
-    }
-  }
-}
-
 .highlight  {
   /* #dec584 or #e2d7a7 */
   color: #dec584;
