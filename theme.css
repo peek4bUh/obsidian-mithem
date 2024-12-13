@@ -1,11 +1,11 @@
 /* ---------------------------------------------------------------------------
 
-Mithem by @angel99ab
+Mithem by @peek4bUh
 
 User interface replacement for Obsidian.
 
 Readme:
-https://github.com/angel99ab/obsidian-mithem
+https://github.com/peek4bUh/obsidian-mithem
 
 ----------------------------------------------------------------------------*/
 
@@ -356,10 +356,11 @@ body.fancy-code .markdown-preview-view pre code {
   color: var(--color-turquoise);
 }
 
-.markdown-preview-view table code,  /* Inline code in tables (Preview mode) */
-.markdown-source-view table code,   /* Inline code in tables (Source/Reading mode) */
-.cm-s-obsidian span.cm-inline-code.cm-codeblock { /* Inline code in tables (Edit mode) */
-    background-color: #444444;  /* Replace with your desired color */
+/* Inline code in tables (Preview, Source/Reading and Edit modes) */
+.markdown-preview-view table code,
+.markdown-source-view table code,
+.cm-s-obsidian span.cm-inline-code.cm-codeblock {
+    background-color: #444444;
 }
 
 .token.class-name,
